@@ -16,6 +16,7 @@ def timetable_calculation():
                 difference = Next - Start
                 print(difference)
                 print((gne_result))
-        gne_21.close()
+            else:
+                print("")
 
 timetable_calculation()
