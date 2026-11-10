@@ -28,4 +28,4 @@ CREATE TABLE IF NOT EXISTS stop_times (
     FOREIGN KEY (line_no) REFERENCES routes(line_no),
     FOREIGN KEY (stop_id) REFERENCES stops(stop_id)
 );
-""")
+""").

@@ -9,4 +9,4 @@ SQL_link = sqlite3.connect("timetable.db")
 
 timetable.to_sql("", SQL_link, if_exists="replace")
 
-SQL_link.close()
+SQL_link.close().
