@@ -10,22 +10,17 @@ CREATE TABLE IF NOT EXISTS line (
     direction TEXT
 );
 
-CREATE TABLE IF NOT EXISTS stops (
-    stop_id INTEGER PRIMARY KEY,
-    stop_name TEXT NOT NULL,
-    latitude REAL,
-    longitude REAL
-);
-
 CREATE TABLE IF NOT EXISTS stop_times (
     trip_id INTEGER NOT NULL,
     line_no TEXT NOT NULL,
-    stop_id INTEGER NOT NULL,
+    stop_name TEXT NOT NULL,
     arrival_time TEXT NOT NULL,
     departure_time TEXT NOT NULL,
     stop_sequence INTEGER NOT NULL,
     PRIMARY KEY (trip_id, stop_sequence),
-    FOREIGN KEY (line_no) REFERENCES routes(line_no),
-    FOREIGN KEY (stop_id) REFERENCES stops(stop_id)
+    FOREIGN KEY (line_no) REFERENCES line(line_no)
 );
-""").
+""")
+
+conn.commit()
+conn.close()
